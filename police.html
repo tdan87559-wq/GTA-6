@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="מדריך בעברית למערכת המבוקשות והכוכבים במשחקי GTA, עם הבהרה לגבי מה שידוע על GTA VI.">
+    <title>המשטרה וכוכבי המבוקשות — מדריך GTA 6</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; min-height: 100vh; padding: 28px 18px 48px; color: #fff; font-family: Arial, sans-serif; text-align: center; background: linear-gradient(145deg, #120d25, #4a1645 58%, #ff007f); }
+        .site-nav { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0 auto 26px; }
+        .site-nav a { color: #fff; background: rgba(0,0,0,.45); border: 1px solid #00f0ff; border-radius: 999px; padding: 10px 18px; text-decoration: none; }
+        .site-nav a:hover, .site-nav a:focus-visible { background: #00f0ff; color: #170b28; }
+        h1 { margin: 10px 0; font-size: clamp(2rem, 5vw, 3.4rem); text-shadow: 2px 2px 10px #00f0ff; }
+        h2 { color: #00f0ff; }
+        .panel { width: min(1050px, 100%); margin: 20px auto; padding: clamp(18px, 3vw, 28px); border: 2px solid #00f0ff; border-radius: 18px; background: rgba(0,0,0,.62); box-shadow: 0 0 26px rgba(0,240,255,.14); }
+        .panel p { line-height: 1.75; }
+        .notice { border-right: 4px solid #ffd166; background: rgba(0,0,0,.42); color: #fff5d6; text-align: right; }
+        .levels { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 20px; }
+        .level-card { padding: 20px 16px; border: 1px solid rgba(255,255,255,.32); border-radius: 14px; background: rgba(255,255,255,.06); }
+        .level-card h3 { margin: 10px 0; }
+        .stars { display: flex; justify-content: center; gap: 5px; direction: ltr; min-height: 44px; align-items: center; }
+        .star { width: 34px; height: 34px; color: #fff; filter: drop-shadow(0 0 5px rgba(255,255,255,.55)); }
+        .star.red { color: #ff334f; filter: drop-shadow(0 0 6px rgba(255,51,79,.7)); }
+        .star.outline { color: #fff; filter: none; }
+        .star.outline polygon { fill: transparent; stroke: currentColor; stroke-width: 2.4; }
+        .star polygon { fill: currentColor; }
+        .sample-row { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
+        .sample { min-width: 220px; padding: 16px; border-radius: 14px; background: rgba(255,255,255,.06); }
+        .label { display: inline-block; padding: 4px 10px; border-radius: 999px; background: rgba(0,240,255,.15); color: #b6f8ff; font-size: .9em; }
+        .back-link { display: inline-block; margin: 12px; color: #00f0ff; }
+        @media (max-width: 480px) { body { padding: 20px 12px 34px; } .star { width: 28px; height: 28px; } }
+    </style>
+</head>
+<body>
+    <nav class="site-nav" aria-label="ניווט ראשי">
+        <a href="index.html">עמוד ראשי — דמויות</a>
+        <a href="map.html">מפת לאונידה</a>
+        <a href="police.html" aria-current="page">המשטרה והכוכבים</a>
+    </nav>
+
+    <header>
+        <h1>המשטרה וכוכבי המבוקשות</h1>
+        <p>מדריך קצר למערכת המבוקשות בסדרת GTA ולמה שידוע — ולא ידוע — על GTA VI.</p>
+    </header>
+
+    <main>
+        <section class="panel notice" aria-labelledby="important-title">
+            <h2 id="important-title">חשוב: מה מאושר לגבי GTA VI?</h2>
+            <p>המשחקים בסדרת GTA משתמשים בכוכבים כדי להציג את רמת המבוקשות, אבל Rockstar לא פרסמה מדריך רשמי שמאשר את המשמעות המדויקת של צבעי כוכבים לבנים או אדומים ב-GTA VI. לכן ההסבר בהמשך הוא מדריך כללי למערכת המבוקשות ולצבעים שמוצגים כאן כאיור — לא פירוש רשמי של מכניקת GTA VI.</p>
+        </section>
+
+        <section class="panel" aria-labelledby="wanted-levels-title">
+            <h2 id="wanted-levels-title">איך פועלת רמת המבוקשות בדרך כלל?</h2>
+            <p>במשחקי GTA, יותר כוכבים בדרך כלל מציינים שהמשטרה מגיבה בעוצמה רבה יותר. מספר הכוכבים המרבי והכוחות שמופיעים משתנים בין משחקים, ולכן לא כדאי להניח שכל הפרטים זהים ב-GTA VI.</p>
+            <div class="levels">
+                <article class="level-card">
+                    <div class="stars" aria-label="כוכב מבוקשות אחד"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 15.2,8.4 22.8,9.2 17.2,14.4 18.7,22 12,18.1 5.3,22 6.8,14.4 1.2,9.2 8.8,8.4"/></svg></div>
+                    <h3>כוכב אחד</h3><span class="label">רמה נמוכה</span>
+                    <p>בדרך כלל, המשטרה מתחילה לחפש או לרדוף אחרי השחקן. כדאי לזכור שהתגובה המדויקת תלויה במשחק ובמצב.</p>
+                </article>
+                <article class="level-card">
+                    <div class="stars" aria-label="שני כוכבי מבוקשות"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 15.2,8.4 22.8,9.2 17.2,14.4 18.7,22 12,18.1 5.3,22 6.8,14.4 1.2,9.2 8.8,8.4"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 15.2,8.4 22.8,9.2 17.2,14.4 18.7,22 12,18.1 5.3,22 6.8,14.4 1.2,9.2 8.8,8.4"/></svg></div>
+                    <h3>שני כוכבים</h3><span class="label">חיפוש מוגבר</span>
+                    <p>בדרך כלל, יותר שוטרים וכלי רכב משתתפים במרדף והלחץ על השחקן עולה.</p>
+                </article>
+                <article class="level-card">
+                    <div class="stars" aria-label="שלושה כוכבי מבוקשות"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 15.2,8.4 22.8,9.2 17.2,14.4 18.7,22 12,18.1 5.3,22 6.8,14.4 1.2,9.2 8.8,8.4"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 15.2,8.4 22.8,9.2 17.2,14.4 18.7,22 12,18.1 5.3,22 6.8,14.4 1.2,9.2 8.8,8.4"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 15.2,8.4 22.8,9.2 17.2,14.4 18.7,22 12,18.1 5.3,22 6.8,14.4 1.2,9.2 8.8,8.4"/></svg></div>
+                    <h3>שלושה כוכבים ומעלה</h3><span class="label">מרדף מסוכן יותר</span>
+                    <p>ברמות גבוהות יותר עשויים להצטרף כוחות נוספים. הפרטים משתנים בין משחקי הסדרה ואינם אישור לגבי GTA VI.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel" aria-labelledby="colors-title">
+            <h2 id="colors-title">ומה אומרים כוכב לבן וכוכב אדום?</h2>
+            <div class="sample-row">
+                <article class="sample">
+                    <div class="stars" aria-label="כוכב לבן"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 15.2,8.4 22.8,9.2 17.2,14.4 18.7,22 12,18.1 5.3,22 6.8,14.4 1.2,9.2 8.8,8.4"/></svg></div>
+                    <h3>כוכב לבן</h3>
+                    <p>במדריך הכללי הזה הוא משמש כסמל לרמת מבוקשות. אין פירוש רשמי מאומת לצבע הלבן ב-GTA VI.</p>
+                </article>
+                <article class="sample">
+                    <div class="stars" aria-label="כוכב אדום"><svg class="star red" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 15.2,8.4 22.8,9.2 17.2,14.4 18.7,22 12,18.1 5.3,22 6.8,14.4 1.2,9.2 8.8,8.4"/></svg></div>
+                    <h3>כוכב אדום</h3>
+                    <p>כאן הוא מוצג כדוגמת עיצוב בלבד. לא ידוע על אישור רשמי של Rockstar לכך שכוכב אדום מסמן מצב מסוים ב-GTA VI.</p>
+                </article>
+                <article class="sample">
+                    <div class="stars" aria-label="כוכב לבן במתאר"><svg class="star outline" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 15.2,8.4 22.8,9.2 17.2,14.4 18.7,22 12,18.1 5.3,22 6.8,14.4 1.2,9.2 8.8,8.4"/></svg></div>
+                    <h3>כוכב במתאר</h3>
+                    <p>כוכב חלול עשוי להופיע בממשקי משחקים שונים, אבל אין לייחס לו משמעות מסוימת ב-GTA VI ללא מקור רשמי.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>סיכום</h2>
+            <p>הכוכבים הם דרך מהירה להבין שרמת המבוקשות עולה. לגבי GTA VI, צבעים כמו לבן או אדום והמשמעות המדויקת שלהם צריכים להיחשב לא מאומתים עד ש-Rockstar תפרסם מידע ברור או שהמשחק יצא ונוכל לבדוק אותו.</p>
+            <a class="back-link" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">בקרו באתר הרשמי של Rockstar</a>
+        </section>
+    </main>
+
+    <a class="back-link" href="index.html">חזרה לעמוד הראשי</a>
+</body>
+</html>
