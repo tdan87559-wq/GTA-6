@@ -48,6 +48,24 @@
             font-variant-numeric: tabular-nums;
         }
         .countdown-label { display: block; margin-top: 6px; }
+        .characters-section { max-width: 1100px; margin: 36px auto; }
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .character-card {
+            margin: 0;
+            max-width: none;
+            text-align: right;
+            border-color: rgba(255, 255, 255, 0.35);
+            transition: transform 160ms ease, border-color 160ms ease;
+        }
+        .character-card:hover { transform: translateY(-4px); border-color: #00f0ff; }
+        .character-card h3 { color: #00f0ff; margin: 0 0 10px; }
+        .character-card p { line-height: 1.65; margin: 0; }
+        .info-note { color: #e8ddec; font-size: 0.95em; line-height: 1.6; }
         @media (max-width: 480px) {
             body { padding: 30px 14px; }
             h1 { font-size: 2.2em; }
@@ -61,8 +79,48 @@
     <h1>Grand Theft Auto VI</h1>
     <div class="card">
         <h2>ברוכים הבאים למדינת לאונידה</h2>
-        <p>האתר הרשמי שלי לסקירת הדמויות, המשטרה והמפה החדשה!</p>
+        <p>האתר שלי לסקירת הדמויות, המשטרה והמפה החדשה!</p>
     </div>
+
+    <section class="characters-section" aria-labelledby="characters-title">
+        <h2 id="characters-title">הדמויות של GTA 6</h2>
+        <p class="info-note">הסיפורים כאן מבוססים על פרטי הדמויות ש-Rockstar פרסמה. חלק מהעלילה עדיין לא נחשף, ולכן לא נוספו פרטים משוערים.</p>
+        <div class="characters-grid">
+            <article class="card character-card">
+                <h3>לוסיה קמינוס (Lucia Caminos)</h3>
+                <p>לוסיה למדה להילחם מאביה כבר בילדותה. הנאמנות למשפחתה הובילה אותה לכלא לאונידה, וכעת היא נחושה לבנות לעצמה חיים טובים יותר. היא יודעת שתצטרך תכנון, מזל ושותף שאפשר לסמוך עליו — ומוכנה לקחת סיכונים כדי להשיג את מטרתה.</p>
+            </article>
+            <article class="card character-card">
+                <h3>ג'ייסון דובאל (Jason Duval)</h3>
+                <p>ג'ייסון גדל בסביבה של נוכלים ופושעים וניסה לפתוח דף חדש לאחר שירות צבאי. כעת הוא עובד עבור מבריחי סמים מקומיים, וחולם על חיים פשוטים יותר. המפגש עם לוסיה עשוי להיות ההזדמנות שחיפש — או לסבך אותו עוד יותר.</p>
+            </article>
+            <article class="card character-card">
+                <h3>קאל המפטון (Cal Hampton)</h3>
+                <p>קאל הוא חבר של ג'ייסון ומעדיף להתבונן מהצד. הוא מעביר את זמנו בהאזנה לתקשורת של משמר החופים ובריגול אחר שיחות, בנוחות של ביתו. הוא מרגיש בטוח כשהוא יודע יותר ממה שאחרים חושבים.</p>
+            </article>
+            <article class="card character-card">
+                <h3>בובי אייק (Boobie Ike)</h3>
+                <p>בובי הוא דמות מוכרת בוייס סיטי שהפך את עסקי הרחוב לאימפריה חוקית למחצה, הכוללת מועדון, אולפן הקלטות ונדל״ן. הוא יודע לזהות הזדמנות עסקית, אבל גם לדאוג לעצמו כשהמצב מסתבך.</p>
+            </article>
+            <article class="card character-card">
+                <h3>דריקוואן פריסט (Dre'Quan Priest)</h3>
+                <p>דריקוואן הוא יזם ומקדם מוזיקה, לא גנגסטר. אחרי שנים של עבודה ברחוב ובמועדונים, הוא מכוון להפוך את חברת התקליטים שלו להצלחה. שיתוף הפעולה עם צמד Real Dimez עשוי לעזור לו לפרוץ.</p>
+            </article>
+            <article class="card character-card">
+                <h3>Real Dimez — ביי-לוקס ורוקסי</h3>
+                <p>ביי-לוקס (Bae-Luxe) ורוקסי (Roxy) הן חברות ותיקות שהפכו לצמד ראפ. סרטונים ושירים שצברו פופולריות ברשת עזרו להן להשיג חוזה עם חברת התקליטים של דריקוואן. הן נחושות להפוך את ההצלחה המקומית לקריירה גדולה.</p>
+            </article>
+            <article class="card character-card">
+                <h3>ראול באוטיסטה (Raul Bautista)</h3>
+                <p>ראול הוא שודד בנקים מנוסה, כריזמטי ובטוח בעצמו. הוא מחפש הזדמנויות ומוכן להמר בגדול, גם כשהסיכון עולה. הגישה הנועזת שלו עלולה לדחוף את שותפיו לקחת סיכונים שהם לא תכננו.</p>
+            </article>
+            <article class="card character-card">
+                <h3>בריאן הדר (Brian Heder)</h3>
+                <p>בריאן הוא מבריח ותיק שפועל מתוך מספנה וממשיך להעביר סחורה בסירה שלו. הוא מעסיק את ג'ייסון בעסקיו ומתגורר עם אשתו השלישית, לורי. הוא מייצג את עולם הפשע הישן של לאונידה.</p>
+            </article>
+        </div>
+    </section>
+
     <section class="card countdown-card" aria-labelledby="countdown-title">
         <h2 id="countdown-title">הספירה לאחור ל-GTA 6</h2>
         <p>המשחק צפוי לצאת ב־19 בנובמבר 2026</p>
