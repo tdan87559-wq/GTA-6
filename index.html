@@ -2,6 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>המדריך ל-GTA 6</title>
     <style>
         body {
@@ -9,7 +10,9 @@
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 50px;
+            padding: 50px 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
         h1 { font-size: 3em; text-shadow: 2px 2px 10px #00f0ff; }
         .card {
@@ -20,6 +23,38 @@
             max-width: 600px;
             margin: 20px auto;
         }
+        .countdown-card { box-shadow: 0 0 24px rgba(0, 240, 255, 0.25); }
+        .countdown-card h2 { margin-top: 0; }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            direction: rtl;
+            margin: 24px 0 12px;
+        }
+        .countdown-unit {
+            min-width: 90px;
+            padding: 14px 10px;
+            border-radius: 12px;
+            background: rgba(0, 240, 255, 0.12);
+            border: 1px solid rgba(0, 240, 255, 0.65);
+        }
+        .countdown-value {
+            display: block;
+            color: #00f0ff;
+            font-size: 2em;
+            font-weight: bold;
+            font-variant-numeric: tabular-nums;
+        }
+        .countdown-label { display: block; margin-top: 6px; }
+        @media (max-width: 480px) {
+            body { padding: 30px 14px; }
+            h1 { font-size: 2.2em; }
+            .countdown { gap: 8px; }
+            .countdown-unit { min-width: 68px; padding: 12px 8px; }
+            .countdown-value { font-size: 1.6em; }
+        }
     </style>
 </head>
 <body>
@@ -28,5 +63,40 @@
         <h2>ברוכים הבאים למדינת לאונידה</h2>
         <p>האתר הרשמי שלי לסקירת הדמויות, המשטרה והמפה החדשה!</p>
     </div>
+    <section class="card countdown-card" aria-labelledby="countdown-title">
+        <h2 id="countdown-title">הספירה לאחור ל-GTA 6</h2>
+        <p>המשחק צפוי לצאת ב־19 בנובמבר 2026</p>
+        <div class="countdown" id="countdown" role="timer" aria-label="הזמן שנותר עד יציאת GTA 6">
+            <div class="countdown-unit"><span class="countdown-value" id="days">—</span><span class="countdown-label">ימים</span></div>
+            <div class="countdown-unit"><span class="countdown-value" id="hours">—</span><span class="countdown-label">שעות</span></div>
+            <div class="countdown-unit"><span class="countdown-value" id="minutes">—</span><span class="countdown-label">דקות</span></div>
+            <div class="countdown-unit"><span class="countdown-value" id="seconds">—</span><span class="countdown-label">שניות</span></div>
+        </div>
+        <p id="countdown-message">הספירה לפי השעון המקומי שלך.</p>
+    </section>
+    <script>
+        // חצות בתחילת תאריך היציאה, לפי אזור הזמן המקומי של המבקר.
+        const releaseDate = new Date(2026, 10, 19, 0, 0, 0);
+        const countdownMessage = document.getElementById('countdown-message');
+        const countdownTimer = document.getElementById('countdown');
+
+        function updateCountdown() {
+            const remaining = releaseDate.getTime() - Date.now();
+            if (remaining <= 0) {
+                countdownTimer.hidden = true;
+                countdownMessage.textContent = 'GTA 6 כבר כאן!';
+                return;
+            }
+
+            const seconds = Math.floor(remaining / 1000);
+            document.getElementById('days').textContent = Math.floor(seconds / 86400);
+            document.getElementById('hours').textContent = String(Math.floor((seconds % 86400) / 3600)).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds % 60).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
