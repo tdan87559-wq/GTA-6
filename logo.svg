@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-labelledby="title desc">
+  <title id="title">Leonida VI — לוגו אתר מעריצים</title>
+  <desc id="desc">לוגו מקורי עם שמש טרופית, דקל מסוגנן והכיתוב Leonida VI.</desc>
+  <defs>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe27a"/>
+      <stop offset="1" stop-color="#ff4e9b"/>
+    </linearGradient>
+    <linearGradient id="word" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#b9fffb"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g transform="translate(20 12)">
+    <circle cx="98" cy="92" r="72" fill="url(#sun)" opacity=".95" filter="url(#glow)"/>
+    <path d="M26 112h144M38 132h120M55 151h105" stroke="#21152f" stroke-width="9" stroke-linecap="round" opacity=".88"/>
+    <path d="M102 154c7-37 11-71 4-110" fill="none" stroke="#14242d" stroke-width="11" stroke-linecap="round"/>
+    <path d="M106 52C73 27 47 28 30 39c28 2 47 10 69 25M108 51c18-33 42-43 65-42-21 13-38 28-55 49M109 51c-5-27 4-48 18-61 0 20-2 39-9 62M105 55C76 50 58 57 45 71c23-7 42-8 62-4M108 55c25-12 48-8 64 1-24 0-43 4-61 13" fill="#65f2ee" stroke="#14242d" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M30 177h140" stroke="#65f2ee" stroke-width="3" opacity=".85"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-weight="900">
+    <text x="220" y="111" fill="url(#word)" font-size="64" letter-spacing="3">LEONIDA</text>
+    <text x="225" y="167" fill="#ff4e9b" font-size="31" letter-spacing="11">FAN GUIDE</text>
+    <text x="545" y="165" fill="#ffe27a" font-size="82" font-style="italic" filter="url(#glow">VI</text>
+  </g>
+</svg>
