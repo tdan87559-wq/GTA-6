@@ -58,13 +58,32 @@
         .character-card {
             margin: 0;
             max-width: none;
+            padding: 0 0 20px;
+            overflow: hidden;
             text-align: right;
             border-color: rgba(255, 255, 255, 0.35);
             transition: transform 160ms ease, border-color 160ms ease;
         }
         .character-card:hover { transform: translateY(-4px); border-color: #00f0ff; }
-        .character-card h3 { color: #00f0ff; margin: 0 0 10px; }
-        .character-card p { line-height: 1.65; margin: 0; }
+        .character-card h3, .character-card p { margin-right: 18px; margin-left: 18px; }
+        .character-card h3 { color: #00f0ff; margin-top: 16px; margin-bottom: 10px; }
+        .character-card p { line-height: 1.65; margin-top: 0; margin-bottom: 0; }
+        .character-image {
+            display: block;
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            object-position: center 35%;
+            background: linear-gradient(135deg, #24133c, #7a164d);
+        }
+        .image-fallback {
+            display: none;
+            height: 230px;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #24133c, #7a164d);
+            color: #e8ddec;
+        }
         .info-note { color: #e8ddec; font-size: 0.95em; line-height: 1.6; }
         @media (max-width: 480px) {
             body { padding: 30px 14px; }
@@ -87,38 +106,55 @@
         <p class="info-note">הסיפורים כאן מבוססים על פרטי הדמויות ש-Rockstar פרסמה. חלק מהעלילה עדיין לא נחשף, ולכן לא נוספו פרטים משוערים.</p>
         <div class="characters-grid">
             <article class="card character-card">
+                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/b70dbf982e8fffb6880b6ec601484d25b7d69656.png" alt="לוסיה קמינוס מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
                 <h3>לוסיה קמינוס (Lucia Caminos)</h3>
                 <p>לוסיה למדה להילחם מאביה כבר בילדותה. הנאמנות למשפחתה הובילה אותה לכלא לאונידה, וכעת היא נחושה לבנות לעצמה חיים טובים יותר. היא יודעת שתצטרך תכנון, מזל ושותף שאפשר לסמוך עליו — ומוכנה לקחת סיכונים כדי להשיג את מטרתה.</p>
             </article>
             <article class="card character-card">
+                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/0671a1577be1705a0747cde5635c9f0142db742e.png" alt="ג'ייסון דובאל מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
                 <h3>ג'ייסון דובאל (Jason Duval)</h3>
                 <p>ג'ייסון גדל בסביבה של נוכלים ופושעים וניסה לפתוח דף חדש לאחר שירות צבאי. כעת הוא עובד עבור מבריחי סמים מקומיים, וחולם על חיים פשוטים יותר. המפגש עם לוסיה עשוי להיות ההזדמנות שחיפש — או לסבך אותו עוד יותר.</p>
             </article>
             <article class="card character-card">
+                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/a1fcab9012b7caaff26383b86b84578199f2731a.png" alt="קאל המפטון מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
                 <h3>קאל המפטון (Cal Hampton)</h3>
                 <p>קאל הוא חבר של ג'ייסון ומעדיף להתבונן מהצד. הוא מעביר את זמנו בהאזנה לתקשורת של משמר החופים ובריגול אחר שיחות, בנוחות של ביתו. הוא מרגיש בטוח כשהוא יודע יותר ממה שאחרים חושבים.</p>
             </article>
             <article class="card character-card">
+                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/7f3e134939131720577c27e7ba2ec3ec44227e6e.png" alt="בובי אייק מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
                 <h3>בובי אייק (Boobie Ike)</h3>
                 <p>בובי הוא דמות מוכרת בוייס סיטי שהפך את עסקי הרחוב לאימפריה חוקית למחצה, הכוללת מועדון, אולפן הקלטות ונדל״ן. הוא יודע לזהות הזדמנות עסקית, אבל גם לדאוג לעצמו כשהמצב מסתבך.</p>
             </article>
             <article class="card character-card">
+                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/3b5a4de24b7f5b23431ff8caa270cdabdcd79bba.png" alt="דריקוואן פריסט מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
                 <h3>דריקוואן פריסט (Dre'Quan Priest)</h3>
                 <p>דריקוואן הוא יזם ומקדם מוזיקה, לא גנגסטר. אחרי שנים של עבודה ברחוב ובמועדונים, הוא מכוון להפוך את חברת התקליטים שלו להצלחה. שיתוף הפעולה עם צמד Real Dimez עשוי לעזור לו לפרוץ.</p>
             </article>
             <article class="card character-card">
+                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/f71b8a2c730fd64da593501446874d4ea83f3725.png" alt="צמד Real Dimez מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
                 <h3>Real Dimez — ביי-לוקס ורוקסי</h3>
                 <p>ביי-לוקס (Bae-Luxe) ורוקסי (Roxy) הן חברות ותיקות שהפכו לצמד ראפ. סרטונים ושירים שצברו פופולריות ברשת עזרו להן להשיג חוזה עם חברת התקליטים של דריקוואן. הן נחושות להפוך את ההצלחה המקומית לקריירה גדולה.</p>
             </article>
             <article class="card character-card">
+                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/651750de727dde8935a6c1f7c9793e301a8b3e71.png" alt="ראול באוטיסטה מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
                 <h3>ראול באוטיסטה (Raul Bautista)</h3>
                 <p>ראול הוא שודד בנקים מנוסה, כריזמטי ובטוח בעצמו. הוא מחפש הזדמנויות ומוכן להמר בגדול, גם כשהסיכון עולה. הגישה הנועזת שלו עלולה לדחוף את שותפיו לקחת סיכונים שהם לא תכננו.</p>
             </article>
             <article class="card character-card">
+                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/dbc6b2b565cf86c532f9384048c5a60eab22db28.png" alt="בריאן הדר מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
                 <h3>בריאן הדר (Brian Heder)</h3>
                 <p>בריאן הוא מבריח ותיק שפועל מתוך מספנה וממשיך להעביר סחורה בסירה שלו. הוא מעסיק את ג'ייסון בעסקיו ומתגורר עם אשתו השלישית, לורי. הוא מייצג את עולם הפשע הישן של לאונידה.</p>
             </article>
         </div>
+        <p class="info-note">התמונות נטענות משרת המדיה של Rockstar Games. זכויות היוצרים שייכות לבעליהן.</p>
     </section>
 
     <section class="card countdown-card" aria-labelledby="countdown-title">
