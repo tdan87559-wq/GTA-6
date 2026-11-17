@@ -5,93 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>המדריך ל-GTA 6</title>
     <style>
-        body {
-            background: linear-gradient(135deg, #1a0b2e, #ff007f);
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px 20px;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
+        body { background: linear-gradient(135deg, #1a0b2e, #ff007f); color: white; font-family: Arial, sans-serif; text-align: center; padding: 50px 20px; min-height: 100vh; box-sizing: border-box; }
         h1 { font-size: 3em; text-shadow: 2px 2px 10px #00f0ff; }
-        .card {
-            background: rgba(0, 0, 0, 0.6);
-            border: 2px solid #00f0ff;
-            border-radius: 15px;
-            padding: 20px;
-            max-width: 600px;
-            margin: 20px auto;
-        }
+        .card { background: rgba(0, 0, 0, 0.6); border: 2px solid #00f0ff; border-radius: 15px; padding: 20px; max-width: 600px; margin: 20px auto; }
         .countdown-card { box-shadow: 0 0 24px rgba(0, 240, 255, 0.25); }
-        .countdown-card h2 { margin-top: 0; }
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            direction: rtl;
-            margin: 24px 0 12px;
-        }
-        .countdown-unit {
-            min-width: 90px;
-            padding: 14px 10px;
-            border-radius: 12px;
-            background: rgba(0, 240, 255, 0.12);
-            border: 1px solid rgba(0, 240, 255, 0.65);
-        }
-        .countdown-value {
-            display: block;
-            color: #00f0ff;
-            font-size: 2em;
-            font-weight: bold;
-            font-variant-numeric: tabular-nums;
-        }
+        .countdown { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; direction: rtl; margin: 24px 0 12px; }
+        .countdown-unit { min-width: 90px; padding: 14px 10px; border-radius: 12px; background: rgba(0, 240, 255, 0.12); border: 1px solid rgba(0, 240, 255, 0.65); }
+        .countdown-value { display: block; color: #00f0ff; font-size: 2em; font-weight: bold; font-variant-numeric: tabular-nums; }
         .countdown-label { display: block; margin-top: 6px; }
         .characters-section { max-width: 1100px; margin: 36px auto; }
-        .characters-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 16px;
-            margin-top: 20px;
-        }
-        .character-card {
-            margin: 0;
-            max-width: none;
-            padding: 0 0 20px;
-            overflow: hidden;
-            text-align: right;
-            border-color: rgba(255, 255, 255, 0.35);
-            transition: transform 160ms ease, border-color 160ms ease;
-        }
+        .characters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 20px; }
+        .character-card { margin: 0; max-width: none; padding: 0 0 20px; overflow: hidden; text-align: right; border-color: rgba(255,255,255,.35); transition: transform 160ms ease, border-color 160ms ease; }
         .character-card:hover { transform: translateY(-4px); border-color: #00f0ff; }
         .character-card h3, .character-card p { margin-right: 18px; margin-left: 18px; }
         .character-card h3 { color: #00f0ff; margin-top: 16px; margin-bottom: 10px; }
         .character-card p { line-height: 1.65; margin-top: 0; margin-bottom: 0; }
-        .character-image {
-            display: block;
-            width: 100%;
-            height: 230px;
-            object-fit: cover;
-            object-position: center 35%;
-            background: linear-gradient(135deg, #24133c, #7a164d);
-        }
-        .image-fallback {
-            display: none;
-            height: 230px;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #24133c, #7a164d);
-            color: #e8ddec;
-        }
-        .info-note { color: #e8ddec; font-size: 0.95em; line-height: 1.6; }
-        @media (max-width: 480px) {
-            body { padding: 30px 14px; }
-            h1 { font-size: 2.2em; }
-            .countdown { gap: 8px; }
-            .countdown-unit { min-width: 68px; padding: 12px 8px; }
-            .countdown-value { font-size: 1.6em; }
-        }
+        .character-art { display: block; width: 100%; height: 230px; background: linear-gradient(145deg, #24133c, #7a164d 58%, #e84c8a); }
+        .character-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+        .art-link { display: inline-block; margin-top: 12px; color: #00f0ff; }
+        .info-note { color: #e8ddec; font-size: .95em; line-height: 1.6; }
+        @media (max-width: 480px) { body { padding: 30px 14px; } h1 { font-size: 2.2em; } .countdown { gap: 8px; } .countdown-unit { min-width: 68px; padding: 12px 8px; } .countdown-value { font-size: 1.6em; } }
     </style>
 </head>
 <body>
@@ -106,55 +39,55 @@
         <p class="info-note">הסיפורים כאן מבוססים על פרטי הדמויות ש-Rockstar פרסמה. חלק מהעלילה עדיין לא נחשף, ולכן לא נוספו פרטים משוערים.</p>
         <div class="characters-grid">
             <article class="card character-card">
-                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/b70dbf982e8fffb6880b6ec601484d25b7d69656.png" alt="לוסיה קמינוס מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
+                <div class="character-art" data-title="Lucia Caminos" aria-label="איור ייצוגי של לוסיה קמינוס"></div>
                 <h3>לוסיה קמינוס (Lucia Caminos)</h3>
                 <p>לוסיה למדה להילחם מאביה כבר בילדותה. הנאמנות למשפחתה הובילה אותה לכלא לאונידה, וכעת היא נחושה לבנות לעצמה חיים טובים יותר. היא יודעת שתצטרך תכנון, מזל ושותף שאפשר לסמוך עליו — ומוכנה לקחת סיכונים כדי להשיג את מטרתה.</p>
+                <a class="art-link" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">לצפייה באתר Rockstar</a>
             </article>
             <article class="card character-card">
-                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/0671a1577be1705a0747cde5635c9f0142db742e.png" alt="ג'ייסון דובאל מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
+                <div class="character-art" data-title="Jason Duval" aria-label="איור ייצוגי של ג׳ייסון דובאל"></div>
                 <h3>ג'ייסון דובאל (Jason Duval)</h3>
                 <p>ג'ייסון גדל בסביבה של נוכלים ופושעים וניסה לפתוח דף חדש לאחר שירות צבאי. כעת הוא עובד עבור מבריחי סמים מקומיים, וחולם על חיים פשוטים יותר. המפגש עם לוסיה עשוי להיות ההזדמנות שחיפש — או לסבך אותו עוד יותר.</p>
+                <a class="art-link" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">לצפייה באתר Rockstar</a>
             </article>
             <article class="card character-card">
-                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/a1fcab9012b7caaff26383b86b84578199f2731a.png" alt="קאל המפטון מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
+                <div class="character-art" data-title="Cal Hampton" aria-label="איור ייצוגי של קאל המפטון"></div>
                 <h3>קאל המפטון (Cal Hampton)</h3>
                 <p>קאל הוא חבר של ג'ייסון ומעדיף להתבונן מהצד. הוא מעביר את זמנו בהאזנה לתקשורת של משמר החופים ובריגול אחר שיחות, בנוחות של ביתו. הוא מרגיש בטוח כשהוא יודע יותר ממה שאחרים חושבים.</p>
+                <a class="art-link" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">לצפייה באתר Rockstar</a>
             </article>
             <article class="card character-card">
-                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/7f3e134939131720577c27e7ba2ec3ec44227e6e.png" alt="בובי אייק מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
+                <div class="character-art" data-title="Boobie Ike" aria-label="איור ייצוגי של בובי אייק"></div>
                 <h3>בובי אייק (Boobie Ike)</h3>
                 <p>בובי הוא דמות מוכרת בוייס סיטי שהפך את עסקי הרחוב לאימפריה חוקית למחצה, הכוללת מועדון, אולפן הקלטות ונדל״ן. הוא יודע לזהות הזדמנות עסקית, אבל גם לדאוג לעצמו כשהמצב מסתבך.</p>
+                <a class="art-link" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">לצפייה באתר Rockstar</a>
             </article>
             <article class="card character-card">
-                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/3b5a4de24b7f5b23431ff8caa270cdabdcd79bba.png" alt="דריקוואן פריסט מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
+                <div class="character-art" data-title="Dre'Quan Priest" aria-label="איור ייצוגי של דריקוואן פריסט"></div>
                 <h3>דריקוואן פריסט (Dre'Quan Priest)</h3>
                 <p>דריקוואן הוא יזם ומקדם מוזיקה, לא גנגסטר. אחרי שנים של עבודה ברחוב ובמועדונים, הוא מכוון להפוך את חברת התקליטים שלו להצלחה. שיתוף הפעולה עם צמד Real Dimez עשוי לעזור לו לפרוץ.</p>
+                <a class="art-link" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">לצפייה באתר Rockstar</a>
             </article>
             <article class="card character-card">
-                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/f71b8a2c730fd64da593501446874d4ea83f3725.png" alt="צמד Real Dimez מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
+                <div class="character-art" data-title="Real Dimez" aria-label="איור ייצוגי של צמד Real Dimez"></div>
                 <h3>Real Dimez — ביי-לוקס ורוקסי</h3>
                 <p>ביי-לוקס (Bae-Luxe) ורוקסי (Roxy) הן חברות ותיקות שהפכו לצמד ראפ. סרטונים ושירים שצברו פופולריות ברשת עזרו להן להשיג חוזה עם חברת התקליטים של דריקוואן. הן נחושות להפוך את ההצלחה המקומית לקריירה גדולה.</p>
+                <a class="art-link" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">לצפייה באתר Rockstar</a>
             </article>
             <article class="card character-card">
-                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/651750de727dde8935a6c1f7c9793e301a8b3e71.png" alt="ראול באוטיסטה מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
+                <div class="character-art" data-title="Raul Bautista" aria-label="איור ייצוגי של ראול באוטיסטה"></div>
                 <h3>ראול באוטיסטה (Raul Bautista)</h3>
                 <p>ראול הוא שודד בנקים מנוסה, כריזמטי ובטוח בעצמו. הוא מחפש הזדמנויות ומוכן להמר בגדול, גם כשהסיכון עולה. הגישה הנועזת שלו עלולה לדחוף את שותפיו לקחת סיכונים שהם לא תכננו.</p>
+                <a class="art-link" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">לצפייה באתר Rockstar</a>
             </article>
             <article class="card character-card">
-                <img class="character-image" src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/57255/dbc6b2b565cf86c532f9384048c5a60eab22db28.png" alt="בריאן הדר מתוך GTA 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="image-fallback" aria-hidden="true">תמונה לא זמינה</div>
+                <div class="character-art" data-title="Brian Heder" aria-label="איור ייצוגי של בריאן הדר"></div>
                 <h3>בריאן הדר (Brian Heder)</h3>
                 <p>בריאן הוא מבריח ותיק שפועל מתוך מספנה וממשיך להעביר סחורה בסירה שלו. הוא מעסיק את ג'ייסון בעסקיו ומתגורר עם אשתו השלישית, לורי. הוא מייצג את עולם הפשע הישן של לאונידה.</p>
+                <a class="art-link" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">לצפייה באתר Rockstar</a>
             </article>
         </div>
-        <p class="info-note">התמונות נטענות משרת המדיה של Rockstar Games. זכויות היוצרים שייכות לבעליהן.</p>
+        <p class="info-note">הקישורים הקודמים לתמונות לא נטענו, לכן הוחלפו באיורים מקומיים כדי למנוע הודעת תמונה שבורה. אלה איורים ייצוגיים ולא תמונות רשמיות מהמשחק.</p>
     </section>
 
     <section class="card countdown-card" aria-labelledby="countdown-title">
@@ -169,11 +102,21 @@
         <p id="countdown-message">הספירה לפי השעון המקומי שלך.</p>
     </section>
     <script>
+        // איורים מקומיים ב-SVG: לא תלויים בקישורי תמונה חיצוניים שעלולים להישבר.
+        document.querySelectorAll('.character-art').forEach((art) => {
+            const title = art.dataset.title;
+            const safeTitle = title.replace(/[&<>"']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[char]));
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#24133c"/><stop offset=".58" stop-color="#7a164d"/><stop offset="1" stop-color="#ff007f"/></linearGradient><radialGradient id="r"><stop stop-color="#00f0ff" stop-opacity=".35"/><stop offset="1" stop-color="#00f0ff" stop-opacity="0"/></radialGradient></defs><rect width="640" height="360" fill="url(#g)"/><circle cx="510" cy="80" r="210" fill="url(#r)"/><path d="M0 300 Q160 210 320 300 T640 280 V360 H0Z" fill="#130b22" opacity=".55"/><circle cx="320" cy="130" r="62" fill="#140d22" opacity=".82"/><path d="M198 315 Q207 205 320 205 Q433 205 442 315Z" fill="#140d22" opacity=".82"/><text x="320" y="340" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="24" font-weight="bold">${safeTitle}</text></svg>`;
+            const image = document.createElement('img');
+            image.alt = `איור ייצוגי של ${title}`;
+            image.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+            art.appendChild(image);
+        });
+
         // חצות בתחילת תאריך היציאה, לפי אזור הזמן המקומי של המבקר.
         const releaseDate = new Date(2026, 10, 19, 0, 0, 0);
         const countdownMessage = document.getElementById('countdown-message');
         const countdownTimer = document.getElementById('countdown');
-
         function updateCountdown() {
             const remaining = releaseDate.getTime() - Date.now();
             if (remaining <= 0) {
@@ -181,14 +124,12 @@
                 countdownMessage.textContent = 'GTA 6 כבר כאן!';
                 return;
             }
-
             const seconds = Math.floor(remaining / 1000);
             document.getElementById('days').textContent = Math.floor(seconds / 86400);
             document.getElementById('hours').textContent = String(Math.floor((seconds % 86400) / 3600)).padStart(2, '0');
             document.getElementById('minutes').textContent = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
             document.getElementById('seconds').textContent = String(seconds % 60).padStart(2, '0');
         }
-
         updateCountdown();
         setInterval(updateCountdown, 1000);
     </script>
