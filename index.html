@@ -13,8 +13,8 @@
     .site-header{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px clamp(16px,5vw,70px);background:rgba(13,10,19,.86);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.15)}
     .brand img{display:block;width:min(230px,42vw);height:auto}
     .site-nav,.hero-actions{display:flex;flex-wrap:wrap;gap:8px}
-    .site-nav a,.button{color:#fff;text-decoration:none;border:1px solid rgba(101,242,238,.5);background:rgba(255,255,255,.08);padding:9px 14px;border-radius:999px;transition:.2s}
-    .site-nav a:hover,.site-nav a:focus-visible,.button:hover,.button:focus-visible{background:var(--cyan);color:#171023}
+    .site-nav a,.button,.audio-button{color:#fff;text-decoration:none;border:1px solid rgba(101,242,238,.5);background:rgba(255,255,255,.08);padding:9px 14px;border-radius:999px;transition:.2s;cursor:pointer;font:inherit}
+    .site-nav a:hover,.site-nav a:focus-visible,.button:hover,.button:focus-visible,.audio-button:hover,.audio-button:focus-visible{background:var(--cyan);color:#171023}
     main{width:min(1160px,calc(100% - 32px));margin:auto}
     .hero{position:relative;overflow:hidden;min-height:360px;margin:30px 0 24px;padding:clamp(28px,6vw,68px);display:flex;align-items:center;border:1px solid rgba(255,255,255,.22);border-radius:28px;background:linear-gradient(100deg,rgba(13,9,20,.94),rgba(13,9,20,.36)),radial-gradient(ellipse at 75% 45%,rgba(238,81,136,.5),transparent 58%);box-shadow:0 22px 70px rgba(0,0,0,.4)}
     .hero-content{position:relative;z-index:1;max-width:640px}
@@ -23,16 +23,27 @@
     .hero p{color:#f2eaf3;font-size:1.1rem;max-width:550px}
     .hero-actions{margin-top:24px}
     .button.primary{background:var(--pink);border-color:var(--pink);font-weight:bold}
-    .release-alert,.countdown-panel,.character-card,.feature-card{border:1px solid rgba(255,255,255,.18);background:rgba(15,11,23,.88);backdrop-filter:blur(8px);box-shadow:0 18px 48px rgba(0,0,0,.32)}
+    .release-alert,.character-card,.feature-card{border:1px solid rgba(255,255,255,.18);background:rgba(15,11,23,.88);backdrop-filter:blur(8px);box-shadow:0 18px 48px rgba(0,0,0,.32)}
     .release-alert{margin:22px 0 30px;padding:clamp(24px,5vw,48px);text-align:center;border:2px solid var(--gold);border-radius:24px;background:linear-gradient(135deg,rgba(32,18,31,.96),rgba(64,22,44,.94))}
     .release-alert h2{margin:12px auto;color:#fff;font-size:clamp(1.45rem,3.8vw,2.7rem);line-height:1.25}
+    .countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:22px 0}
+    .time-unit{min-width:100px;padding:12px 16px;border:1px solid rgba(255,255,255,.2);border-radius:16px;background:rgba(0,0,0,.28)}
+    .time-value{display:block;color:var(--cyan);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:bold;font-variant-numeric:tabular-nums;line-height:1.2}
+    .time-label{color:var(--muted);font-size:.9rem}
+    .audio-controls{margin-top:22px}
+    .audio-button{background:var(--pink);border-color:var(--pink);font-weight:bold}
+    .audio-note{font-size:.9rem;color:var(--muted)}
+    .audio-player{margin:16px auto 0;max-width:560px}
+    .audio-player iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:14px}
     .section{padding:26px 0}
     .section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}
     .section-heading h2{margin:0;font-size:clamp(1.7rem,4vw,2.4rem)}
     .muted{color:var(--muted)}
     .character-grid,.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:16px}
     .character-card{overflow:hidden;border-radius:20px}
-    .portrait{height:170px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(145deg,#32203d,#8d3c64 55%,#e67871);font-size:1.35rem;font-weight:bold;color:#fff}
+    .portrait{height:230px;overflow:hidden;background:linear-gradient(145deg,#32203d,#8d3c64 55%,#e67871)}
+    .portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform .35s ease}
+    .character-card:hover .portrait img{transform:scale(1.04)}
     .character-copy{padding:16px 18px 20px}
     .character-copy h3,.feature-card h3{margin:0 0 8px;color:var(--cyan)}
     .character-copy p,.feature-card p{margin:0;color:#eee6f0}
@@ -40,7 +51,7 @@
     .feature-icon{font-size:2rem;color:var(--gold)}
     .site-footer{text-align:center;padding:26px 16px;color:#ddd3e1;border-top:1px solid rgba(255,255,255,.15);margin-top:42px;background:rgba(10,8,15,.62)}
     .site-footer a{color:var(--cyan)}
-    @media(max-width:650px){.site-header{position:static;align-items:flex-start;flex-direction:column}.site-nav{gap:7px}.site-nav a{font-size:.9rem;padding:8px 11px}.hero{min-height:320px}.section-heading{display:block}}
+    @media(max-width:650px){.site-header{position:static;align-items:flex-start;flex-direction:column}.site-nav{gap:7px}.site-nav a{font-size:.9rem;padding:8px 11px}.hero{min-height:320px}.section-heading{display:block}.portrait{height:260px}.time-unit{min-width:78px;padding:10px}}
   </style>
 </head>
 <body>
@@ -50,19 +61,81 @@
   </header>
   <main>
     <section class="hero"><div class="hero-content"><div class="eyebrow">ברוכים הבאים ללאונידה</div><h1>GRAND<br>THEFT AUTO VI</h1><p>מדריך מעריצים בעברית לדמויות, למקומות ולפרטים שפורסמו על העולם החדש של GTA VI.</p><div class="hero-actions"><a class="button primary" href="#characters">לגלות את הדמויות</a><a class="button" href="map.html">מפת לאונידה</a><a class="button" href="gallery.html">גלריית תמונות</a><a class="button" href="minigame.html">את מי אתם מעדיפים?</a></div></div></section>
-    <section class="release-alert"><span class="eyebrow" style="color:var(--gold)">עדכון זמינות</span><h2>בניו זילנד, באוסטרליה וביפן אפשר לשחק</h2></section>
-    <section class="section" id="characters"><div class="section-heading"><div><div class="eyebrow">האנשים של לאונידה</div><h2>דמויות מרכזיות</h2></div><p class="muted">איורי המחשה, לא תמונות רשמיות</p></div><div class="character-grid">
-      <article class="character-card"><div class="portrait">לוסיה קמינוס</div><div class="character-copy"><h3>לוסיה קמינוס</h3><p>לוסיה למדה להילחם מאביה. נחושה לבנות לעצמה חיים טובים יותר.</p></div></article>
-      <article class="character-card"><div class="portrait">ג׳ייסון דובאל</div><div class="character-copy"><h3>ג׳ייסון דובאל</h3><p>ג׳ייסון גדל לצד נוכלים וניסה להשאיר את עברו מאחור.</p></div></article>
-      <article class="character-card"><div class="portrait">קאל המפטון</div><div class="character-copy"><h3>קאל המפטון</h3><p>חבר של ג׳ייסון שמעדיף להישאר באזור הנוחות שלו.</p></div></article>
-      <article class="character-card"><div class="portrait">בובי אייק</div><div class="character-copy"><h3>בובי אייק</h3><p>יזם מוכר בוייס סיטי שהפך את עסקי הרחוב לאימפריה של מועדונים, מוזיקה ונדל״ן.</p></div></article>
-      <article class="character-card"><div class="portrait">דריקוואן פריסט</div><div class="character-copy"><h3>דריקוואן פריסט</h3><p>יזם ומקדם מוזיקה ששואף להצליח בתעשיית המוזיקה.</p></div></article>
-      <article class="character-card"><div class="portrait">Real Dimez</div><div class="character-copy"><h3>Real Dimez</h3><p>צמד הראפ ביי-לוקס ורוקסי, חברות ותיקות שמנסות לפרוץ במוזיקה.</p></div></article>
-      <article class="character-card"><div class="portrait">ראול באוטיסטה</div><div class="character-copy"><h3>ראול באוטיסטה</h3><p>שודד בנקים מנוסה, כריזמטי ונועז.</p></div></article>
-      <article class="character-card"><div class="portrait">בריאן הדר</div><div class="character-copy"><h3>בריאן הדר</h3><p>מבריח ותיק שמפעיל עסק מתוך מספנה ומשתף את ג׳ייסון בעבודתו.</p></div></article>
+    <section class="release-alert" aria-labelledby="launch-title">
+      <span class="eyebrow" style="color:var(--gold)">ספירה לאחור להשקה בישראל</span>
+      <h2 id="launch-title">ההשקה בישראל — 19 בנובמבר 2026, בחצות</h2>
+      <div class="countdown" id="countdown" role="timer" aria-live="off" aria-label="ספירה לאחור להשקת המשחק בישראל">
+        <div class="time-unit"><span class="time-value" id="count-days">000</span><span class="time-label">ימים</span></div>
+        <div class="time-unit"><span class="time-value" id="count-hours">00</span><span class="time-label">שעות</span></div>
+        <div class="time-unit"><span class="time-value" id="count-minutes">00</span><span class="time-label">דקות</span></div>
+        <div class="time-unit"><span class="time-value" id="count-seconds">00</span><span class="time-label">שניות</span></div>
+      </div>
+      <p id="countdown-message" class="muted">הספירה לפי שעון ישראל.</p>
+      <div class="audio-controls">
+        <button class="audio-button" id="audio-toggle" type="button" aria-controls="audio-player" aria-expanded="false">▶ הפעלת סאונד ברקע</button>
+        <p class="audio-note">הסאונד יתחיל רק לאחר לחיצה, בהתאם להגבלות הדפדפן. הסרטון המקורי של Rockstar יופיע בנגן.</p>
+        <div class="audio-player" id="audio-player"></div>
+      </div>
+    </section>
+    <section class="section" id="characters"><div class="section-heading"><div><div class="eyebrow">האנשים של לאונידה</div><h2>דמויות מרכזיות</h2></div><p class="muted">תמונות הדמויות שסופקו</p></div><div class="character-grid">
+      <article class="character-card"><div class="portrait"><img src="image%20(7).png" alt="לוסיה קמינוס" loading="lazy"></div><div class="character-copy"><h3>לוסיה קמינוס</h3><p>לוסיה למדה להילחם מאביה. נחושה לבנות לעצמה חיים טובים יותר.</p></div></article>
+      <article class="character-card"><div class="portrait"><img src="image%20(6).png" alt="ג׳ייסון דובאל" loading="lazy"></div><div class="character-copy"><h3>ג׳ייסון דובאל</h3><p>ג׳ייסון גדל לצד נוכלים וניסה להשאיר את עברו מאחור.</p></div></article>
+      <article class="character-card"><div class="portrait"><img src="image%20(5).png" alt="קאל המפטון" loading="lazy"></div><div class="character-copy"><h3>קאל המפטון</h3><p>חבר של ג׳ייסון שמעדיף להישאר באזור הנוחות שלו.</p></div></article>
+      <article class="character-card"><div class="portrait"><img src="image%20(4).png" alt="בובי אייק" loading="lazy"></div><div class="character-copy"><h3>בובי אייק</h3><p>יזם מוכר בוייס סיטי שהפך את עסקי הרחוב לאימפריה של מועדונים, מוזיקה ונדל״ן.</p></div></article>
+      <article class="character-card"><div class="portrait"><img src="image%20(3).png" alt="דריקוואן פריסט" loading="lazy"></div><div class="character-copy"><h3>דריקוואן פריסט</h3><p>יזם ומקדם מוזיקה ששואף להצליח בתעשיית המוזיקה.</p></div></article>
+      <article class="character-card"><div class="portrait"><img src="image%20(2).png" alt="Real Dimez — ביי-לוקס ורוקסי" loading="lazy"></div><div class="character-copy"><h3>Real Dimez</h3><p>צמד הראפ ביי-לוקס ורוקסי, חברות ותיקות שמנסות לפרוץ במוזיקה.</p></div></article>
+      <article class="character-card"><div class="portrait"><img src="image%20(1).png" alt="בריאן הדר" loading="lazy"></div><div class="character-copy"><h3>בריאן הדר</h3><p>מבריח ותיק שמפעיל עסק מתוך מספנה ומשתף את ג׳ייסון בעבודתו.</p></div></article>
+      <article class="character-card"><div class="portrait"><img src="image.png" alt="ראול באוטיסטה" loading="lazy"></div><div class="character-copy"><h3>ראול באוטיסטה</h3><p>שודד בנקים מנוסה, כריזמטי ונועז.</p></div></article>
     </div><p class="muted">המידע והעלילה עשויים להתעדכן; חלק מפרטי המשחק עדיין לא נחשפו.</p></section>
-    <section class="section"><div class="section-heading"><div><div class="eyebrow">המשך לחקור</div><h2>מגלים את לאונידה</h2></div></div><div class="feature-grid"><a class="feature-card" href="map.html"><div class="feature-icon">⌖</div><h3>מפת לאונידה</h3><p>מפת לאונידה ואזורים שהוזכרו בחומרי המשחק.</p></a><a class="feature-card" href="police.html"><div class="feature-icon">✦</div><h3>המשטרה והכוכבים</h3><p>מה מאושר — ומה עדיין לא — לגבי מערכת המבוקשות.</p></a><a class="feature-card" href="gallery.html"><div class="feature-icon">▧</div><h3>גלריית תמונות</h3><p>תמונות וטריילרים ממקורות רשמיים.</p></a><a class="feature-card" href="minigame.html"><div class="feature-icon">♥</div><h3>את מי אתם מעדיפים?</h3><p>בחרו בין שמונה דמויות ומצאו מי הדמות המועדפת שלכם.</p></a></div></section>
+    <section class="section"><div class="section-heading"><div><div class="eyebrow">המשך לחקור</div><h2>מגלים את לאונידה</h2></div></div><div class="feature-grid"><a class="feature-card" href="map.html"><div class="feature-icon">⌖</div><h3>מפת לאונידה</h3><p>מפת לאונידה ואזורים שהוזכרו בחומרי המשחק.</p></a><a class="feature-card" href="police.html"><div class="feature-icon">✦</div><h3>המשטרה והכוכבים</h3><p>מה מאושר — ומה עדיין לא — לגבי מערכת המשטרה.</p></a><a class="feature-card" href="gallery.html"><div class="feature-icon">▧</div><h3>גלריית תמונות</h3><p>תמונות וטריילרים של GTA VI.</p></a><a class="feature-card" href="minigame.html"><div class="feature-icon">♥</div><h3>את מי אתם מעדיפים?</h3><p>בחרו בין דמויות GTA VI במיני־משחק חדש.</p></a></div></section>
   </main>
   <footer class="site-footer">אתר מעריצים לא רשמי. GTA VI וכל סימני המסחר שייכים ל-Rockstar Games. <a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">האתר הרשמי של Rockstar</a></footer>
+  <script>
+    (() => {
+      const launchAt = new Date('2026-11-19T00:00:00+02:00').getTime();
+      const pad = value => String(value).padStart(2, '0');
+      const updateCountdown = () => {
+        const remaining = launchAt - Date.now();
+        if (remaining <= 0) {
+          document.getElementById('countdown').innerHTML = '<strong class="time-value">00:00</strong>';
+          document.getElementById('countdown-message').textContent = 'GTA VI יצא בישראל!';
+          return;
+        }
+        const days = Math.floor(remaining / 86400000);
+        const hours = Math.floor((remaining % 86400000) / 3600000);
+        const minutes = Math.floor((remaining % 3600000) / 60000);
+        const seconds = Math.floor((remaining % 60000) / 1000);
+        document.getElementById('count-days').textContent = String(days).padStart(3, '0');
+        document.getElementById('count-hours').textContent = pad(hours);
+        document.getElementById('count-minutes').textContent = pad(minutes);
+        document.getElementById('count-seconds').textContent = pad(seconds);
+      };
+      updateCountdown();
+      window.setInterval(updateCountdown, 1000);
+
+      const audioButton = document.getElementById('audio-toggle');
+      const audioPlayer = document.getElementById('audio-player');
+      let playing = false;
+      audioButton.addEventListener('click', () => {
+        if (playing) {
+          audioPlayer.replaceChildren();
+          audioButton.textContent = '▶ הפעלת סאונד ברקע';
+          audioButton.setAttribute('aria-expanded', 'false');
+          playing = false;
+          return;
+        }
+        const frame = document.createElement('iframe');
+        frame.title = 'Grand Theft Auto VI — Official Cover Art Reveal';
+        frame.src = 'https://www.youtube-nocookie.com/embed/EiQEBYDox_k?autoplay=1&playsinline=1';
+        frame.allow = 'autoplay; encrypted-media; picture-in-picture; web-share';
+        frame.referrerPolicy = 'strict-origin-when-cross-origin';
+        frame.allowFullscreen = true;
+        audioPlayer.replaceChildren(frame);
+        audioButton.textContent = '■ עצירת הסאונד';
+        audioButton.setAttribute('aria-expanded', 'true');
+        playing = true;
+      });
+    })();
+  </script>
 </body>
 </html>
