@@ -23,7 +23,7 @@
     .hero p{color:#f2eaf3;font-size:1.1rem;max-width:550px}
     .hero-actions{margin-top:24px}
     .button.primary{background:var(--pink);border-color:var(--pink);font-weight:bold}
-    .release-alert,.countdown-panel,.character-card,.feature-card{border:1px solid rgba(255,255,255,.18);background:rgba(15,11,23,.88);backdrop-filter:blur(8px);box-shadow:0 18px 48px rgba(0,0,0,.32)}
+    .release-alert,.character-card,.feature-card{border:1px solid rgba(255,255,255,.18);background:rgba(15,11,23,.88);backdrop-filter:blur(8px);box-shadow:0 18px 48px rgba(0,0,0,.32)}
     .release-alert{margin:22px 0 30px;padding:clamp(24px,5vw,48px);text-align:center;border:2px solid var(--gold);border-radius:24px;background:linear-gradient(135deg,rgba(32,18,31,.96),rgba(64,22,44,.94))}
     .release-alert h2{margin:12px auto;color:#fff;font-size:clamp(1.45rem,3.8vw,2.7rem);line-height:1.25}
     .section{padding:26px 0}
@@ -32,7 +32,9 @@
     .muted{color:var(--muted)}
     .character-grid,.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:16px}
     .character-card{overflow:hidden;border-radius:20px}
-    .portrait{height:170px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(145deg,#32203d,#8d3c64 55%,#e67871);font-size:1.35rem;font-weight:bold;color:#fff}
+    .portrait{height:230px;overflow:hidden;background:linear-gradient(145deg,#32203d,#8d3c64 55%,#e67871)}
+    .portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform .35s ease}
+    .character-card:hover .portrait img{transform:scale(1.04)}
     .character-copy{padding:16px 18px 20px}
     .character-copy h3,.feature-card h3{margin:0 0 8px;color:var(--cyan)}
     .character-copy p,.feature-card p{margin:0;color:#eee6f0}
@@ -40,7 +42,7 @@
     .feature-icon{font-size:2rem;color:var(--gold)}
     .site-footer{text-align:center;padding:26px 16px;color:#ddd3e1;border-top:1px solid rgba(255,255,255,.15);margin-top:42px;background:rgba(10,8,15,.62)}
     .site-footer a{color:var(--cyan)}
-    @media(max-width:650px){.site-header{position:static;align-items:flex-start;flex-direction:column}.site-nav{gap:7px}.site-nav a{font-size:.9rem;padding:8px 11px}.hero{min-height:320px}.section-heading{display:block}}
+    @media(max-width:650px){.site-header{position:static;align-items:flex-start;flex-direction:column}.site-nav{gap:7px}.site-nav a{font-size:.9rem;padding:8px 11px}.hero{min-height:320px}.section-heading{display:block}.portrait{height:260px}}
   </style>
 </head>
 <body>
@@ -51,17 +53,17 @@
   <main>
     <section class="hero"><div class="hero-content"><div class="eyebrow">ברוכים הבאים ללאונידה</div><h1>GRAND<br>THEFT AUTO VI</h1><p>מדריך מעריצים בעברית לדמויות, למקומות ולפרטים שפורסמו על העולם החדש של GTA VI.</p><div class="hero-actions"><a class="button primary" href="#characters">לגלות את הדמויות</a><a class="button" href="map.html">מפת לאונידה</a><a class="button" href="gallery.html">גלריית תמונות</a></div></div></section>
     <section class="release-alert"><span class="eyebrow" style="color:var(--gold)">עדכון זמינות</span><h2>בניו זילנד, באוסטרליה וביפן אפשר לשחק</h2></section>
-    <section class="section" id="characters"><div class="section-heading"><div><div class="eyebrow">האנשים של לאונידה</div><h2>דמויות מרכזיות</h2></div><p class="muted">איורי המחשה, לא תמונות רשמיות</p></div><div class="character-grid">
-      <article class="character-card"><div class="portrait">לוסיה קמינוס</div><div class="character-copy"><h3>לוסיה קמינוס</h3><p>לוסיה למדה להילחם מאביה. נחושה לבנות לעצמה חיים טובים יותר.</p></div></article>
-      <article class="character-card"><div class="portrait">ג׳ייסון דובאל</div><div class="character-copy"><h3>ג׳ייסון דובאל</h3><p>ג׳ייסון גדל לצד נוכלים וניסה להשאיר את עברו מאחור.</p></div></article>
-      <article class="character-card"><div class="portrait">קאל המפטון</div><div class="character-copy"><h3>קאל המפטון</h3><p>חבר של ג׳ייסון שמעדיף להישאר באזור הנוחות שלו.</p></div></article>
-      <article class="character-card"><div class="portrait">בובי אייק</div><div class="character-copy"><h3>בובי אייק</h3><p>יזם מוכר בוייס סיטי שהפך את עסקי הרחוב לאימפריה של מועדונים, מוזיקה ונדל״ן.</p></div></article>
-      <article class="character-card"><div class="portrait">דריקוואן פריסט</div><div class="character-copy"><h3>דריקוואן פריסט</h3><p>יזם ומקדם מוזיקה ששואף להצליח בתעשיית המוזיקה.</p></div></article>
-      <article class="character-card"><div class="portrait">Real Dimez</div><div class="character-copy"><h3>Real Dimez</h3><p>צמד הראפ ביי-לוקס ורוקסי, חברות ותיקות שמנסות לפרוץ במוזיקה.</p></div></article>
-      <article class="character-card"><div class="portrait">ראול באוטיסטה</div><div class="character-copy"><h3>ראול באוטיסטה</h3><p>שודד בנקים מנוסה, כריזמטי ונועז.</p></div></article>
-      <article class="character-card"><div class="portrait">בריאן הדר</div><div class="character-copy"><h3>בריאן הדר</h3><p>מבריח ותיק שמפעיל עסק מתוך מספנה ומשתף את ג׳ייסון בעבודתו.</p></div></article>
+    <section class="section" id="characters"><div class="section-heading"><div><div class="eyebrow">האנשים של לאונידה</div><h2>דמויות מרכזיות</h2></div><p class="muted">תמונות הדמויות שסופקו</p></div><div class="character-grid">
+      <article class="character-card"><div class="portrait"><img src="image.png" alt="לוסיה קמינוס" loading="lazy"></div><div class="character-copy"><h3>לוסיה קמינוס</h3><p>לוסיה למדה להילחם מאביה. נחושה לבנות לעצמה חיים טובים יותר.</p></div></article>
+      <article class="character-card"><div class="portrait"><img src="image%20(1).png" alt="ג׳ייסון דובאל" loading="lazy"></div><div class="character-copy"><h3>ג׳ייסון דובאל</h3><p>ג׳ייסון גדל לצד נוכלים וניסה להשאיר את עברו מאחור.</p></div></article>
+      <article class="character-card"><div class="portrait"><img src="image%20(2).png" alt="קאל המפטון" loading="lazy"></div><div class="character-copy"><h3>קאל המפטון</h3><p>חבר של ג׳ייסון שמעדיף להישאר באזור הנוחות שלו.</p></div></article>
+      <article class="character-card"><div class="portrait"><img src="image%20(3).png" alt="בובי אייק" loading="lazy"></div><div class="character-copy"><h3>בובי אייק</h3><p>יזם מוכר בוייס סיטי שהפך את עסקי הרחוב לאימפריה של מועדונים, מוזיקה ונדל״ן.</p></div></article>
+      <article class="character-card"><div class="portrait"><img src="image%20(4).png" alt="דריקוואן פריסט" loading="lazy"></div><div class="character-copy"><h3>דריקוואן פריסט</h3><p>יזם ומקדם מוזיקה ששואף להצליח בתעשיית המוזיקה.</p></div></article>
+      <article class="character-card"><div class="portrait"><img src="image%20(5).png" alt="Real Dimez — ביי-לוקס ורוקסי" loading="lazy"></div><div class="character-copy"><h3>Real Dimez</h3><p>צמד הראפ ביי-לוקס ורוקסי, חברות ותיקות שמנסות לפרוץ במוזיקה.</p></div></article>
+      <article class="character-card"><div class="portrait"><img src="image%20(6).png" alt="ראול באוטיסטה" loading="lazy"></div><div class="character-copy"><h3>ראול באוטיסטה</h3><p>שודד בנקים מנוסה, כריזמטי ונועז.</p></div></article>
+      <article class="character-card"><div class="portrait"><img src="image%20(7).png" alt="בריאן הדר" loading="lazy"></div><div class="character-copy"><h3>בריאן הדר</h3><p>מבריח ותיק שמפעיל עסק מתוך מספנה ומשתף את ג׳ייסון בעבודתו.</p></div></article>
     </div><p class="muted">המידע והעלילה עשויים להתעדכן; חלק מפרטי המשחק עדיין לא נחשפו.</p></section>
-    <section class="section"><div class="section-heading"><div><div class="eyebrow">המשך לחקור</div><h2>מגלים את לאונידה</h2></div></div><div class="feature-grid"><a class="feature-card" href="map.html"><div class="feature-icon">⌖</div><h3>מפת לאונידה</h3><p>מפת לאונידה ואזורים שהוזכרו בחומרי המשחק.</p></a><a class="feature-card" href="police.html"><div class="feature-icon">✦</div><h3>המשטרה והכוכבים</h3><p>מה מאושר — ומה עדיין לא — לגבי מערכת המבוקשות.</p></a><a class="feature-card" href="gallery.html"><div class="feature-icon">▧</div><h3>גלריית תמונות</h3><p>תמונות וטריילרים ממקורות רשמיים.</p></a></div></section>
+    <section class="section"><div class="section-heading"><div><div class="eyebrow">המשך לחקור</div><h2>מגלים את לאונידה</h2></div></div><div class="feature-grid"><a class="feature-card" href="map.html"><div class="feature-icon">⌖</div><h3>מפת לאונידה</h3><p>מפת לאונידה ואזורים שהוזכרו בחומרי המשחק.</p></a><a class="feature-card" href="police.html"><div class="feature-icon">✦</div><h3>המשטרה והכוכבים</h3><p>מה מאושר — ומה עדיין לא — לגבי מערכת המשטרה.</p></a><a class="feature-card" href="gallery.html"><div class="feature-icon">▧</div><h3>גלריית תמונות</h3><p>תמונות וטריילרים של GTA VI.</p></a></div></section>
   </main>
   <footer class="site-footer">אתר מעריצים לא רשמי. GTA VI וכל סימני המסחר שייכים ל-Rockstar Games. <a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">האתר הרשמי של Rockstar</a></footer>
 </body>
