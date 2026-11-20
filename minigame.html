@@ -48,7 +48,7 @@
   <main>
     <section class="intro"><div class="eyebrow">מיני־משחק • GTA VI</div><h1>את מי אתם מעדיפים?</h1><p>בכל סיבוב בחרו את הדמות האהובה עליכם מבין השתיים. אחרי שבע בחירות נגלה מי הדמות המועדפת עליכם!</p></section>
     <section class="game-panel" aria-labelledby="match-title">
-      <div class="game-top"><strong id="match-title">בחרו את הדמות המועדפת</strong><span class="score" id="round-label">סיבוב 1 מתוך 7</span></div>
+      <div class="game-top"><strong id="match-title">בחרו את הדמות המועדפת</strong><span class="score" id="round-label">בחירה 1 מתוך 7</span></div>
       <div class="progress" role="progressbar" aria-label="התקדמות המשחק" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0"><div class="progress-bar" id="progress-bar"></div></div>
       <div class="matchup" id="matchup"></div>
       <div class="result" id="result" hidden></div>
@@ -68,15 +68,23 @@
         {name:'בריאן הדר', image:'image%20(1).png'},
         {name:'ראול באוטיסטה', image:'image.png'}
       ];
-      const rounds = [];
-      for (let i = 0; i < characters.length; i += 2) rounds.push([characters[i], characters[i + 1]]);
-      // Shuffle pairings so the same matchup order is not repeated on every play.
-      for (let i = rounds.length - 1; i > 0; i--) {
+
+      // Shuffle the starting order, then let each selected character advance through the bracket.
+      for (let i = characters.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [rounds[i], rounds[j]] = [rounds[j], rounds[i]];
+        [characters[i], characters[j]] = [characters[j], characters[i]];
       }
-      let round = 0;
-      const wins = new Map();
+      function makeMatchups(players) {
+        const matchups = [];
+        for (let i = 0; i < players.length; i += 2) matchups.push([players[i], players[i + 1]]);
+        return matchups;
+      }
+
+      let matchups = makeMatchups(characters);
+      let matchIndex = 0;
+      let matchesPlayed = 0;
+      let advancing = [];
+      const totalMatches = characters.length - 1;
       const matchup = document.getElementById('matchup');
       const result = document.getElementById('result');
       const restart = document.getElementById('restart');
@@ -84,15 +92,15 @@
       const progress = document.querySelector('.progress');
       const progressBar = document.getElementById('progress-bar');
 
-      function showRound() {
+      function showMatch() {
         result.hidden = true;
         matchup.hidden = false;
         restart.hidden = true;
-        roundLabel.textContent = `סיבוב ${round + 1} מתוך ${rounds.length}`;
-        progress.setAttribute('aria-valuenow', String(round));
-        progressBar.style.width = `${round / rounds.length * 100}%`;
+        roundLabel.textContent = `בחירה ${matchesPlayed + 1} מתוך ${totalMatches}`;
+        progress.setAttribute('aria-valuenow', String(matchesPlayed));
+        progressBar.style.width = `${matchesPlayed / totalMatches * 100}%`;
         matchup.replaceChildren();
-        rounds[round].forEach(character => {
+        matchups[matchIndex].forEach(character => {
           const button = document.createElement('button');
           button.type = 'button';
           button.className = 'choice';
@@ -104,24 +112,34 @@
           const name = document.createElement('span');
           name.textContent = character.name;
           button.append(image, name);
-          button.addEventListener('click', () => {
-            wins.set(character.name, (wins.get(character.name) || 0) + 1);
-            round += 1;
-            if (round < rounds.length) showRound();
-            else showResult();
-          });
+          button.addEventListener('click', () => advance(character));
           matchup.append(button);
         });
       }
 
-      function showResult() {
+      function advance(winner) {
+        advancing.push(winner);
+        matchesPlayed += 1;
+        matchIndex += 1;
+        if (matchIndex < matchups.length) {
+          showMatch();
+          return;
+        }
+        if (advancing.length === 1) {
+          showResult(advancing[0]);
+          return;
+        }
+        matchups = makeMatchups(advancing);
+        advancing = [];
+        matchIndex = 0;
+        showMatch();
+      }
+
+      function showResult(winner) {
         matchup.hidden = true;
         roundLabel.textContent = 'סיימתם את המשחק!';
-        progress.setAttribute('aria-valuenow', String(rounds.length));
+        progress.setAttribute('aria-valuenow', String(totalMatches));
         progressBar.style.width = '100%';
-        const winner = characters.reduce((best, character) =>
-          (wins.get(character.name) || 0) > (wins.get(best.name) || 0) ? character : best
-        , characters[0]);
         result.replaceChildren();
         const heading = document.createElement('h2');
         heading.textContent = 'הדמות המועדפת עליכם היא:';
@@ -142,7 +160,7 @@
       }
 
       restart.addEventListener('click', () => window.location.reload());
-      showRound();
+      showMatch();
     })();
   </script>
 </body>
