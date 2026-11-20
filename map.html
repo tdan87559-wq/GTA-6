@@ -8,15 +8,15 @@
   <style>
     :root{color-scheme:dark;--cyan:#65f2ee;--gold:#ffd36e;--muted:#e2d9e6}
     *{box-sizing:border-box}
-    body{margin:0;min-height:100vh;color:#fff;font-family:Arial,sans-serif;line-height:1.65;background:linear-gradient(180deg,rgba(12,8,18,.78),rgba(12,8,18,.92)),url('images.jpg') center/cover fixed}
+    body{margin:0;min-height:100vh;color:#fff;font-family:Arial,sans-serif;line-height:1.65;background:linear-gradient(180deg,rgba(12,8,18,.78),rgba(12,8,18,.92)),url('images.jpg') center/cover fixed no-repeat}
     a{color:var(--cyan)}
-    .site-header{position:sticky;top:0;z-index:4;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:10px clamp(16px,5vw,70px);background:rgba(13,10,19,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.12)}
+    .site-header{position:sticky;top:0;z-index:4;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:10px clamp(16px,5vw,70px);background:rgba(13,10,19,.86);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.15)}
     .brand img{display:block;width:min(230px,42vw);height:auto}
     .site-nav{display:flex;gap:8px;flex-wrap:wrap}
     .site-nav a{color:#fff;text-decoration:none;border:1px solid rgba(101,242,238,.42);background:rgba(255,255,255,.07);padding:9px 14px;border-radius:999px}
     .site-nav a:hover,.site-nav a:focus-visible{background:var(--cyan);color:#171023}
     main{width:min(1120px,calc(100% - 32px));margin:auto}
-    .hero{margin:30px 0 22px;padding:clamp(24px,5vw,54px);border-radius:26px;border:1px solid rgba(255,255,255,.2);background:linear-gradient(110deg,rgba(13,9,20,.94),rgba(13,9,20,.48)),url('images.jpg') center/cover}
+    .hero{margin:30px 0 22px;padding:clamp(24px,5vw,54px);border-radius:26px;border:1px solid rgba(255,255,255,.2);background:linear-gradient(110deg,rgba(13,9,20,.94),rgba(13,9,20,.48)),url('gta-vi-map-concept-in-color-by-gyranos.webp') center/cover}
     .eyebrow{color:var(--cyan);font-size:.82rem;font-weight:bold;letter-spacing:.16em}
     .hero h1{font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.05;margin:8px 0}
     .hero p{max-width:700px;color:#f0e9f1}
@@ -24,9 +24,14 @@
     .map-panel{padding:clamp(10px,2vw,20px);overflow:hidden}
     .map-canvas{position:relative;line-height:0;border-radius:14px;overflow:hidden}
     .map-image{display:block;width:100%;height:auto;background:#087fa5}
-    .map-label{position:absolute;z-index:1;transform:translate(-50%,-50%);line-height:1.2;white-space:nowrap;padding:clamp(3px,.7vw,7px) clamp(6px,1vw,11px);border:1px solid rgba(101,242,238,.8);border-radius:999px;background:rgba(10,8,18,.88);color:#fff;font-size:clamp(9px,1.35vw,15px);font-weight:bold;text-shadow:0 1px 2px #000;box-shadow:0 2px 10px rgba(0,0,0,.55)}
+    .map-label{position:absolute;z-index:1;transform:translate(-50%,-50%);line-height:1.2;white-space:nowrap;padding:clamp(3px,.7vw,7px) clamp(6px,1vw,11px);border:1px solid rgba(101,242,238,.8);border-radius:999px;background:rgba(12,9,20,.88);color:#fff;font-size:clamp(.68rem,1.35vw,.95rem);font-weight:bold;text-shadow:0 1px 2px #000}
     .map-label::before{content:"";display:inline-block;width:.55em;height:.55em;margin-left:.45em;border-radius:50%;background:var(--gold);vertical-align:middle;box-shadow:0 0 8px var(--gold)}
-    .label-vice-city{left:78%;top:70%}.label-port-gellhorn{left:23%;top:35%}.label-grassrivers{left:63%;top:49%}.label-ambrosia{left:43%;top:56%}.label-mount-kalaga{left:58%;top:21%}.label-keys{left:84%;top:87%}
+    .label-vice-city{left:78%;top:70%}
+    .label-port-gellhorn{left:25%;top:58%}
+    .label-grassrivers{left:63%;top:49%}
+    .label-ambrosia{left:49%;top:37%}
+    .label-mount-kalaga{left:58%;top:15%}
+    .label-keys{left:63%;top:88%}
     .map-caption{text-align:center;color:var(--muted);padding:12px 8px 0;margin:0;line-height:1.5}
     .notice{margin:18px 0;padding:16px 20px;border-right:4px solid var(--gold);color:#fff4d6}
     .place-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px;margin:18px 0 30px}
@@ -35,18 +40,18 @@
     .place-grid p{margin:0;color:var(--muted)}
     .footer{text-align:center;padding:24px;color:#d4cbd8;border-top:1px solid rgba(255,255,255,.15);margin-top:30px;background:rgba(10,8,15,.6)}
     .footer a{color:var(--cyan)}
-    @media(max-width:650px){.site-header{position:static;align-items:flex-start;flex-direction:column}.site-nav a{font-size:.9rem;padding:8px 11px}.hero{margin-top:20px}.map-label{font-size:clamp(8px,2.1vw,12px);padding:3px 5px}.map-label::before{margin-left:3px}}
+    @media(max-width:650px){.site-header{position:static;align-items:flex-start;flex-direction:column}.site-nav a{font-size:.9rem;padding:8px 11px}.hero{margin-top:20px}.map-label{font-size:clamp(.55rem,2vw,.8rem);padding:2px 5px}}
   </style>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Leonida VI — עמוד הבית"><img src="logo.svg" alt="Leonida VI — Fan Guide"></a>
     <nav class="site-nav" aria-label="ניווט ראשי">
-      <a href="index.html">ראשי</a><a href="map.html" aria-current="page">מפת לאונידה</a><a href="police.html">המשטרה והכוכבים</a><a href="gallery.html">גלריית תמונות</a><a href="faq.html">שאלות נפוצות</a>
+      <a href="index.html">ראשי</a><a href="map.html" aria-current="page">מפת לאונידה</a><a href="police.html">המשטרה והכוכבים</a><a href="gallery.html">גלריית תמונות</a><a href="minigame.html">משחק הדמויות</a>
     </nav>
   </header>
   <main>
-    <section class="hero"><div class="eyebrow">מדריך לא רשמי • המפה הרשמית</div><h1>לאונידה, במבט מלמעלה</h1><p>המפה הרשמית של לאונידה, מתוך חומרי הקידום של GTA VI. שמות המקומות מסומנים על גבי המפה.</p></section>
+    <section class="hero"><div class="eyebrow">מדריך לא רשמי • המפה הרשמית</div><h1>לאונידה, במבט מלמעלה</h1><p>המפה הרשמית של לאונידה, כפי שמוצגת בחומרי הקידום של GTA VI. שמות המסומנים יעזרו לכם לזהות את האזורים המרכזיים.</p></section>
     <figure class="map-panel" aria-label="מפת לאונידה עם שמות המקומות המסומנים עליה">
       <div class="map-canvas">
         <img class="map-image" src="gta-vi-map-concept-in-color-by-gyranos.webp" alt="מפת לאונידה של GTA VI, עם שמות המקומות מסומנים עליה" loading="lazy">
@@ -57,7 +62,7 @@
         <span class="map-label label-mount-kalaga">הר קלאגה</span>
         <span class="map-label label-keys">קיז לאונידה</span>
       </div>
-      <figcaption class="map-caption">שמות המקומות מסומנים על המפה. מיקום התוויות הוא להמחשה.</figcaption>
+      <figcaption class="map-caption">שמות המקומות מסומנים על המפה. מיקום התוויות משוער ואינו מפה רשמית.</figcaption>
     </figure>
     <aside class="notice"><strong>לתשומת לב:</strong> המפה היא תמונת קונספט שסופקה באתר; מיקום התוויות משוער ואינו מפה רשמית.</aside>
     <section class="place-grid" aria-label="פרטים על אזורי לאונידה">
