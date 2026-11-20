@@ -27,10 +27,6 @@
     .release-alert,.character-card,.feature-card{border:1px solid rgba(255,255,255,.18);background:rgba(15,11,23,.88);backdrop-filter:blur(8px);box-shadow:0 18px 48px rgba(0,0,0,.32)}
     .release-alert{margin:22px 0 30px;padding:clamp(24px,5vw,48px);text-align:center;border:2px solid var(--gold);border-radius:24px;background:linear-gradient(135deg,rgba(32,18,31,.96),rgba(64,22,42,.84),rgba(12,40,48,.86))}
     .release-alert h2{margin:12px auto;color:#fff;font-size:clamp(1.45rem,3.8vw,2.7rem);line-height:1.25}
-    .countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:22px 0}
-    .time-unit{min-width:100px;padding:12px 16px;border:1px solid rgba(255,255,255,.2);border-radius:16px;background:rgba(0,0,0,.28)}
-    .time-value{display:block;color:var(--cyan);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:bold;font-variant-numeric:tabular-nums;line-height:1.2}
-    .time-label{color:var(--muted);font-size:.9rem}
     .audio-controls{margin-top:22px}
     .audio-button{background:var(--pink);border-color:var(--pink);font-weight:bold}
     .audio-note{font-size:.9rem;color:var(--muted)}
@@ -52,7 +48,7 @@
     .feature-icon{font-size:2rem;color:var(--gold)}
     .site-footer{text-align:center;padding:26px 16px;color:#ddd3e1;border-top:1px solid rgba(255,255,255,.15);margin-top:42px;background:rgba(10,8,15,.62)}
     .site-footer a{color:var(--cyan)}
-    @media(max-width:650px){.site-header{position:static;align-items:flex-start;flex-direction:column}.site-nav{gap:7px}.site-nav a{font-size:.9rem;padding:8px 11px}.hero{min-height:320px}.section-heading{align-items:flex-start;flex-direction:column}.time-unit{min-width:82px}}
+    @media(max-width:650px){.site-header{position:static;align-items:flex-start;flex-direction:column}.site-nav{gap:7px}.site-nav a{font-size:.9rem;padding:8px 11px}.hero{min-height:320px}.section-heading{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
 <body>
@@ -64,7 +60,7 @@
     <section class="hero"><div class="hero-content"><div class="eyebrow">ברוכים הבאים ללאונידה</div><h1>GRAND<br>THEFT AUTO VI</h1><p>מדריך מעריצים בעברית לחדשות, הדמויות והמקומות של לאונידה.</p><div class="hero-actions"><a class="button primary" href="#release">פרטי יציאה</a><a class="button" href="map.html">גלו את המפה</a></div></div></section>
     <section class="release-alert" id="release" aria-labelledby="launch-title">
       <span class="eyebrow" style="color:var(--gold)">GTA VI</span>
-      <h2 id="launch-title">למשחק יצא בכל העולם</h2>
+      <h2 id="launch-title">GTA VI יצא לכל העולם</h2>
       <div class="audio-controls">
         <button class="audio-button" id="audio-toggle" type="button" aria-controls="audio-player" aria-expanded="false">▶ הפעלת סאונד ברקע</button>
         <p class="audio-note">הסאונד יתחיל רק לאחר לחיצה, בהתאם להגבלות הדפדפן. הסרטון המקורי של Rockstar יופיע בנגן.</p>
